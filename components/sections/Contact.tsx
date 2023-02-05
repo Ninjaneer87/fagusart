@@ -19,7 +19,7 @@ const Contact = () => {
   return (
     <section className="
         py-[10vw] relative flex flex-col items-center justify-center z-[0]
-        bg-cover bg-no-repeat bg-center bg-fixed bg-[url('/images/bg/3.webp')]
+        bg-cover bg-no-repeat bg-center lg:bg-fixed bg-[url('/images/bg/3.webp')]
         before:content-[''] before:absolute before:inset-0 before:z-[-1] before:bg-black/80 
       "
       ref={scrollRef}

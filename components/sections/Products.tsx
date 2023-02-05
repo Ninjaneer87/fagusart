@@ -18,7 +18,7 @@ const Products = () => {
   return (
     <section className="
         py-[10vw] relative  flex flex-col items-center justify-center md:px-4 z-[0]
-        bg-cover bg-no-repeat bg-center bg-fixed bg-[url('/images/bg/2.webp')]
+        bg-cover bg-no-repeat bg-center lg:bg-fixed bg-[url('/images/bg/2.webp')]
         before:content-[''] before:absolute before:inset-0 before:z-[-1] before:bg-black/80 
       "
       ref={scrollRef}

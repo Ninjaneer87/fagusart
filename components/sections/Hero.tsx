@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section className="
         py-[10vw] relative min-h-[100vh] flex flex-col items-center justify-center px-4 z-[0]
-        bg-cover bg-no-repeat bg-center bg-fixed bg-[url('/images/bg/1.webp')]
+        bg-cover bg-no-repeat bg-center lg:bg-fixed bg-[url('/images/bg/1.webp')]
         before:content-[''] before:absolute before:inset-0 before:z-[-1] before:bg-black/80 
       "
       ref={scrollRef}
