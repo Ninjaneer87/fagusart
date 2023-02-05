@@ -4,7 +4,7 @@ This is a presentational website for a furniture manifacturer.
 
 Technologies used:
 
- - Client:  `Next JS(^13)` | `TypeScript` | `Tailwind-CSS` | `Material UI(^5)` | `SCSS` | `thirdweb` | `React Query` | `Node Mailer`
+ - Client:  `Next JS(^13)` | `TypeScript` | `Tailwind-CSS` | `Material UI(^5)` | `SCSS` | `Node Mailer` | `React Photo Album`
 
 ## Hosting
 
