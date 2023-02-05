@@ -1,0 +1,35 @@
+@use "/styles/global/_index.scss" as *;
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @include static-colors;
+  }
+}
+
+@layer components {
+  .bg-glass {
+    @apply  backdrop-blur-3xl bg-bg-paper;
+  }
+  .heading {
+    @apply flex text-center items-center justify-center p-4 md:px-12 text-4xl font-light relative after:content-[''] after:top-full after:-translate-x-1/2 after:left-1/2 after:absolute after:h-1 after:bg-primary after:w-20;
+  }
+  .gradient {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+  .gradient-button {
+    @apply gradient border-none outline-none flex gap-2 items-center justify-center py-3 px-4 rounded-xl text-base text-white;
+  }
+  .skewer-minus {
+    @apply z-[1] pt-[100px] pb-[200px] relative
+      after:-skew-y-6 after:mt-[-6%] after:content-[''] after:absolute after:inset-0 after:z-[-1] after:bg-bg
+      before:-skew-y-6 before:translate-y-[12%]  before:content-[''] before:absolute before:inset-0 before:z-[-1] before:bg-bg
+     
+  }
+  .skewer-plus {
+    @apply after:skew-y-6 after:mt-[6%] relative after:content-[''] after:absolute after:inset-0 after:z-[-1] after:bg-bg z-[1] pt-[100px] pb-[200px]
+  }
+}

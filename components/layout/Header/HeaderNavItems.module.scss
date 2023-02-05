@@ -1,0 +1,36 @@
+.navbarInner {
+  width: fit-content;
+  display: flex;
+  flex-flow: row;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: var(--gradient);
+    position: absolute;
+    width: var(--width);
+    left: 0;
+    bottom: 0;
+    top: 95%;
+    right: 0;
+    z-index: -1;
+    border-radius: 6px;
+    transition: all 250ms ease 0s;
+    transform: translateX(var(--left));
+  }
+}
+
+.listItem {
+  width: fit-content;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: color 150ms ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  &:hover {
+    color: var(--color-primary);
+    background-color: unset;
+  }
+}
