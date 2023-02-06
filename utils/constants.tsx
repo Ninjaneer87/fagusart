@@ -29,7 +29,7 @@ export const socials = [
   },
   {
     name: "Lokacija",
-    link: "https://google.com/",
+    link: "https://www.google.com/maps/dir//fagusart+lokacija/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x475cc7b1012e997d:0x5343fb2aa44136a8?sa=X&ved=2ahUKEwjdtYmSkIH9AhXsxIsKHYlMCWAQ9Rd6BAg_EAU&hl=sr",
     icon: <LocationOnIcon color="primary" />,
   },
 ];

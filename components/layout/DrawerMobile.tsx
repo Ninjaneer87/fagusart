@@ -1,13 +1,10 @@
 import { ButtonBase } from "@mui/material";
 import { useSectionContext } from "context/sectionContext";
-import useBoxPosition from "hooks/useBoxPosition";
 import React, { useCallback, useEffect, useState } from "react";
 import { navItems } from "utils/constants";
-import ClientOnlyPortal from "../portals/ClientOnlyPortal";
 
 const DrawerMobile = () => {
-  const { inViewSection, scrollToSection } = useSectionContext();
-  // const { boxRef, boxPosition } = useBoxPosition<HTMLButtonElement, string>(inViewSection);
+  const { inViewSection, scrollToSection, setInViewSection} = useSectionContext();
   const [hide, setHide] = useState(false);
   const [y, setY] = useState(0);
 
@@ -37,7 +34,10 @@ const DrawerMobile = () => {
               aria-label={item.name}
               focusRipple
               color="primary"
-              onClick={_e => scrollToSection(item.name)}
+              onClick={_e => {
+                scrollToSection(item.name);
+                setInViewSection(item.name);
+              }}
               className={`icon-wrapper p-2 rounded-lg justify-center flex-col gap-1 ${item.name === inViewSection ? "bg-themed-bg text-primary" : ""}`}
             >
               {item.icon}
