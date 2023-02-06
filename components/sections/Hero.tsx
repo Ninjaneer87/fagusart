@@ -7,11 +7,11 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import BlurIn from '../ui/BlurIn';
 
 const Hero = () => {
-  const { addSection, setInViewSection, scrollToSection } = useSectionContext();
+  const { isScrolling, addSection, setInViewSection, scrollToSection } = useSectionContext();
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
-      inView && setInViewSection("hero");
+      inView && !isScrolling && setInViewSection("hero");
       entry && addSection("hero", entry.target);
     },
   });
@@ -37,7 +37,10 @@ const Hero = () => {
             fullWidth
             endIcon={<ArrowRightAltIcon />}
             variant='outlined'
-            onClick={_e => scrollToSection("products")}
+            onClick={_e => {
+              scrollToSection("products");
+              setInViewSection("products")
+            }}
           >
             Ponuda
           </Button>
@@ -49,7 +52,10 @@ const Hero = () => {
             className='text-bg'
             endIcon={<ArrowRightAltIcon />}
             variant='contained'
-            onClick={_e => scrollToSection("contact")}
+            onClick={_e => {
+              scrollToSection("contact");
+              setInViewSection("contact")
+            }}
           >
             Kontakt
           </Button>

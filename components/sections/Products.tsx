@@ -6,11 +6,11 @@ import BlurIn from '../ui/BlurIn';
 import { featuredProducts, otherProducts } from 'utils/constants';
 
 const Products = () => {
-  const { addSection, setInViewSection } = useSectionContext();
+  const { isScrolling, addSection, setInViewSection } = useSectionContext();
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
-      inView && setInViewSection("products");
+      inView && !isScrolling && setInViewSection("products");
       entry && addSection("products", entry.target);
     },
   });

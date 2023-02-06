@@ -20,18 +20,21 @@ const slides = photos.map(({ src, width, height, images }) => ({
 }));
 
 function Gallery() {
-  const { addSection, setInViewSection } = useSectionContext();
+  const { isScrolling, addSection, setInViewSection } = useSectionContext();
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
-      inView && setInViewSection("gallery");
+      inView && !isScrolling && setInViewSection("gallery");
       entry && addSection("gallery", entry.target);
     },
   });
   const [index, setIndex] = useState(-1);
 
   return (
-    <section ref={scrollRef} className='relative py-10 z-[1]'>
+    <section 
+      ref={scrollRef} 
+      className='relative py-10 z-[1]'
+    >
       <Triangle position='top-ascending' />
 
       <BlurIn className='heading mb-20 mt-0' component='h2'>Naš album</BlurIn>

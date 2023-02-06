@@ -1,22 +1,17 @@
-import React, { useContext, createContext, useEffect, useState } from "react";
-
+import React, { useContext, createContext, useState } from "react";
 import { useSections } from "hooks/useSections";
 
-export type SectionNames = "hero" | "about" | "products" | "gallery" | "contact";
+const SectionContext = createContext({});
 
-export type SectionProps = {
-  setInViewSection: (sectionName: SectionNames) => void;
-  addSection: (sectionName: SectionNames, section: Element) => void;
-};
+export type SectionNames = "hero" | "about" | "products" | "gallery" | "contact";
 
 type SectionContextType = {
   inViewSection: SectionNames;
   setInViewSection: React.Dispatch<React.SetStateAction<SectionNames>>;
   scrollToSection: (sectionName: SectionNames) => void;
   addSection: (sectionName: SectionNames, section: Element) => void;
+  isScrolling: boolean;
 };
-
-const SectionContext = createContext({});
 
 type Props = {
   children: React.ReactNode;
@@ -24,13 +19,14 @@ type Props = {
 
 export const SectionContextProvider = ({ children }: Props) => {
   const [inViewSection, setInViewSection] = useState<SectionNames>("hero");
-  const { addSection, scrollToSection } = useSections<SectionNames>();
+  const { isScrolling,  addSection, scrollToSection } = useSections<SectionNames>();
 
   const context: SectionContextType = {
     inViewSection,
     setInViewSection,
     scrollToSection,
     addSection,
+    isScrolling,
   };
 
   return (

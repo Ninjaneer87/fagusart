@@ -7,11 +7,11 @@ import BlurIn from '../ui/BlurIn';
 import Triangle from '../ui/Triangle';
 
 const About = () => {
-  const { addSection, setInViewSection } = useSectionContext();
+  const { isScrolling, addSection, setInViewSection } = useSectionContext();
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
-      inView && setInViewSection("about");
+      inView && !isScrolling && setInViewSection("about");
       entry && addSection("about", entry.target);
     },
   });

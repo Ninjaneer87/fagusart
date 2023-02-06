@@ -7,11 +7,11 @@ import ContactInfo from './ContactInfo';
 import ContactMessage from './ContactMessage';
 
 const Contact = () => {
-  const { addSection, setInViewSection } = useSectionContext();
+  const { isScrolling, addSection, setInViewSection } = useSectionContext();
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
-      inView && setInViewSection("contact");
+      inView && !isScrolling && setInViewSection("contact");
       entry && addSection("contact", entry.target);
     },
   });

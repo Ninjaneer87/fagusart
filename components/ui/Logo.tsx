@@ -3,19 +3,20 @@ import { Typography } from "@mui/material";
 import NextLink from "next/link";
 import VillaIcon from '@mui/icons-material/Villa';
 
-import { ButtonBase, useTheme, useMediaQuery } from "@mui/material";
+import { ButtonBase } from "@mui/material";
+import { useSectionContext } from "context/sectionContext";
 
 type Props = {
   withLabel?: boolean;
 };
 
 const Logo = ({ withLabel }: Props) => {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down(768));
+  const { scrollToSection, setInViewSection } = useSectionContext();
 
   const logoHandler: MouseEventHandler<HTMLAnchorElement> = (event) => {
     event.preventDefault();
-    document.body.scrollIntoView({ behavior: "smooth" });
+    scrollToSection("hero");
+    setInViewSection("hero");
   };
 
   return (

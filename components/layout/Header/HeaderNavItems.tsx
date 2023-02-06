@@ -1,5 +1,5 @@
 import useBoxPosition from 'hooks/useBoxPosition';
-import React from 'react';
+import React, { useRef } from 'react';
 import { navItems } from 'utils/constants';
 import { ListItemButton } from '@mui/material';
 import ListItemText from '@mui/material/ListItemText';
@@ -9,7 +9,7 @@ import { useSectionContext } from 'context/sectionContext';
 
 
 const HeaderNavItems = () => {
-  const { inViewSection, scrollToSection } = useSectionContext();
+  const { inViewSection, scrollToSection, setInViewSection } = useSectionContext();
   const { boxRef, boxPosition } = useBoxPosition<HTMLButtonElement, string>(inViewSection);
 
   return (
@@ -27,7 +27,11 @@ const HeaderNavItems = () => {
             className={`${classes.listItem}`}
             component="button"
             disableRipple
-            onClick={_e => scrollToSection(name)}
+            data-box-trigger={name}
+            onClick={_e => {
+              scrollToSection(name);
+              setInViewSection(name);
+            }}
           >
             {icon}
             <ListItemText primary={text} />
