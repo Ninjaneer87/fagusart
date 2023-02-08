@@ -12,6 +12,7 @@ import { contactFormInputs } from "utils/constants";
 import Button from "@mui/material/Button";
 import LoadingBar from "../ui/LoadingBar";
 import ClientOnlyPortal from "../portals/ClientOnlyPortal";
+import AlertSnack from "../ui/AlertSnack";
 
 const ContactMessage = () => {
   const { inputs, setInputs, formIsValid, resetForm } = useForm(contactFormInputs);
@@ -32,6 +33,9 @@ const ContactMessage = () => {
       setLoading(true);
       try {
         // await axios.post("/api/email", emailBody);
+        // setLoading(false);
+        // setDialogOpen(true);
+        // resetForm();
         console.log(emailBody)
         setTimeout(() => {
           setLoading(false);
@@ -50,6 +54,9 @@ const ContactMessage = () => {
       {loading && <LoadingBar />}
 
       <div className="max-w-[600px] w-full">
+        <div className='text-2xl font-light text-start mb-8'>
+          Pošaljite nam poruku
+        </div>
         <BlurIn>
           <form noValidate autoComplete="off" onSubmit={handleSubmit} className='flex flex-col gap-8'>
             {Object.entries(inputs).map(([key, formCtrl], i) => (
@@ -64,7 +71,7 @@ const ContactMessage = () => {
               </BlurIn>
             ))}
 
-            <BlurIn>
+            <BlurIn delay={600}>
               <Button
                 type="submit"
                 endIcon={!loading && <SendOutlinedIcon />}
@@ -84,11 +91,12 @@ const ContactMessage = () => {
         <MessageSuccess handleClose={closeDialog} />
       </Dialog>
 
-      <ClientOnlyPortal>
-        <Snackbar open={snackOpen} autoHideDuration={6000} onClose={closeSnack} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}>
-          <Alert onClose={closeSnack} className="snackbar" severity="error">Došlo je do greške, poruka nije poslata</Alert>
-        </Snackbar>
-      </ClientOnlyPortal>
+      <AlertSnack
+        open={snackOpen}
+        onClose={closeSnack}
+        message="Došlo je do greške, poruka nije poslata"
+        severity="error"
+      />
     </div>
   );
 };

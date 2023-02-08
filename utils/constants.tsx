@@ -6,16 +6,19 @@ import FolderSpecialIcon from '@mui/icons-material/FolderSpecial';
 import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import HomeIcon from "@mui/icons-material/Home";
 import { SectionNames } from "context/sectionContext";
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import HandshakeIcon from '@mui/icons-material/Handshake';
-import { getPhotoObject } from "./utility";
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 export const EMAIL_REGEX = /^\w+([.-]?\w+)+@\w+([.:]?\w+)+(\.[a-zA-Z0-9]{2,})+$/;
 
+export const locationAddressUrl = "https://www.google.com/maps/dir//fagusart+lokacija/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x475cc7b1012e997d:0x5343fb2aa44136a8?sa=X&ved=2ahUKEwjdtYmSkIH9AhXsxIsKHYlMCWAQ9Rd6BAg_EAU&hl=sr";
 export const socials = [
   {
     name: "Facebook",
@@ -29,10 +32,45 @@ export const socials = [
   },
   {
     name: "Lokacija",
-    link: "https://www.google.com/maps/dir//fagusart+lokacija/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x475cc7b1012e997d:0x5343fb2aa44136a8?sa=X&ved=2ahUKEwjdtYmSkIH9AhXsxIsKHYlMCWAQ9Rd6BAg_EAU&hl=sr",
+    link: locationAddressUrl,
     icon: <LocationOnIcon color="primary" />,
   },
 ];
+
+export const contactItems = [
+  {
+    icon: <PhoneIphoneIcon />,
+    href: "tel:+38163557542",
+    target: "",
+    label: "+381 63 / 557 542 ↗",
+    copyValue: "+38163557542",
+    message: 'Broj telefona kopiran'
+  },
+  {
+    icon: <PhoneIphoneIcon />,
+    href: "tel:+381638088423",
+    target: "",
+    label: "+381 63 / 88 58 391 ↗",
+    copyValue: "+381638088423",
+    message: 'Broj telefona kopiran'
+  },
+  {
+    icon: <MailOutlineIcon />,
+    href: "mailto:fagusartdoo@gmail.com",
+    target: "",
+    label: "fagusartdoo@gmail.com ↗",
+    copyValue: "fagusartdoo@gmail.com",
+    message: 'E-mail adresa kopirana'
+  },
+  {
+    icon: <LocationOnOutlinedIcon />,
+    href: locationAddressUrl,
+    target: "_blank",
+    label: "Preduzetnička 2b, Apatin ↗",
+    copyValue: locationAddressUrl,
+    message: 'Adresa kopirana'
+  }
+]
 
 
 type NavItems = {
@@ -46,7 +84,7 @@ export const navItems: NavItems = [
   {
     id: 0,
     name: 'hero',
-    text: "FagusArt",
+    text: "Fagus Art",
     icon: <HomeIcon />,
   },
   {
@@ -124,7 +162,7 @@ export const aboutItems = [
     id: 0,
     icon: <AutoFixHighIcon color="primary" fontSize="large" />,
     desc: <div>
-      U potrazi za savršenim nameštajem po meri?
+      U potrazi ste za savršenim nameštajem po meri?
       <br />
       Naše preduzeće je specijalizovano za izradu nameštaja prema vašim željama i potrebama.
       <br />
@@ -156,37 +194,56 @@ export const featuredProducts = [
     id: 0,
     img: "images/icons/kitchen.svg",
     label: 'Kuhinje',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a quos, laboriosam, nihil odit omnis maiores.'
   },
   {
     id: 1,
     img: "images/icons/bedroom.svg",
     label: 'Spavaće sobe',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a quos, laboriosam, nihil odit omnis maiores.'
   },
   {
     id: 2,
     img: "images/icons/office.svg",
     label: 'Kancelarijski nameštaj',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a quos, laboriosam, nihil odit omnis maiores.'
   },
   {
     id: 3,
     img: "images/icons/closet.svg",
-    label: 'Plakari',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a quos, laboriosam, nihil odit omnis maiores.'
+    label: 'Plakare',
   },
   {
     id: 4,
     img: "images/icons/door.svg",
     label: 'Sobna vrata',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a quos, laboriosam, nihil odit omnis maiores.'
   },
   {
     id: 5,
     img: "images/icons/living-room.svg",
     label: 'Dnevni boravak',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, a quos, laboriosam, nihil odit omnis maiores.'
+  },
+  {
+    id: 6,
+    img: "images/icons/window.svg",
+    label: 'Građevinsku stolariju',
+  },
+  {
+    id: 7,
+    img: "images/icons/stairs.svg",
+    label: 'Stepeništa',
+  },
+  {
+    id: 8,
+    img: "images/icons/anteroom.svg",
+    label: 'Predsoblja',
+  },
+  {
+    id: 9,
+    img: "images/icons/bathroom.svg",
+    label: 'Kupatila',
+  },
+  {
+    id: 10,
+    img: "images/icons/interior.svg",
+    label: 'Opremu enterijera',
   },
 ];
 

@@ -23,28 +23,14 @@ const Products = () => {
       "
       ref={scrollRef}
     >
-      <BlurIn className='heading' component='h2'>Najtraženiji proizvodi</BlurIn>
+      <BlurIn className='heading' component='h2'>Pravimo po meri</BlurIn>
 
       <Container maxWidth={'xl'}>
         <ul className='grid grid-cols-[repeat(auto-fit,_minmax(280px,_380px))] justify-center gap-20 w-full mt-20'>
-          {featuredProducts.map(({ id, img, label, text }) => (
-            <BlurIn delay={id * 200} className='flex gap-8' key={id}>
+          {featuredProducts.map(({ id, img, label }) => (
+            <BlurIn delay={id * 40} className='flex gap-8 items-center' key={id}>
               <img src={img} alt={label} width={60} height={60} />
-              <div>
-                <h3 className='mt-0 font-medium'>{label}</h3>
-                <p className='font-extralight opacity-80'>{text}</p>
-              </div>
-            </BlurIn>
-          ))}
-        </ul>
-
-        <BlurIn component='hr'></BlurIn>
-
-        <BlurIn component='h2' className='text-start w-full font-normal'>Radimo još i:</BlurIn>
-        <ul className='flex flex-wrap gap-5 mb-10'>
-          {otherProducts.map((item, i) => (
-            <BlurIn component='li' delay={(i + 1) * 150} key={item} className='p-4 rounded-lg bg-bg'>
-              {item}
+              <h3 className='m-0 font-medium'>{label}</h3>
             </BlurIn>
           ))}
         </ul>

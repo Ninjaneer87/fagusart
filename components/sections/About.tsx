@@ -33,12 +33,12 @@ const About = () => {
 
         <ul className='flex flex-wrap items-center justify-around gap-8 mt-20'>
           {aboutItems.map(({ id, icon, desc }, i) => (
-            <BlurIn delay={(i + 1) * 200} component='li' key={id} className="gradient-wrapper w-full max-w-[400px]">
+            <BlurIn delay={(i + 1) * 200} component='li' key={id} className="gradient-wrapper w-full max-w-[430px]">
               <div className='bg-glass rounded-2xl p-4 sm:p-8 text-start'>
                 <div className="h-[150px] flex items-center justify-center">
                   <span className='scale-[1.5]'>{icon}</span>
                 </div>
-                <div className="h-[200px] flex items-start justify-center">
+                <div className="min-h-[200px] flex items-start justify-center">
                   {desc}
                 </div>
               </div>

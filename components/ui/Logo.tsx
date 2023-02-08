@@ -29,11 +29,12 @@ const Logo = ({ withLabel }: Props) => {
         onClick={logoHandler}
       >
         <span className="icon-wrapper text-primary">
-          <VillaIcon fontSize="large" color="primary" />
+          {/* <VillaIcon fontSize="large" color="primary" /> */}
+          <img src="images/logo.svg" alt="logo" width={40} height={40} />
         </span>
         {withLabel
           ? <Typography component='span' className="block text-[1.8rem] font-[500] bg-clip-text text-transparent gradient shrink-0">
-              FagusArt
+              Fagus Art
             </Typography>
           : null}
       </ButtonBase>
