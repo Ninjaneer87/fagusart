@@ -10,24 +10,24 @@ export default class MyDocument extends Document {
         <Head>
           {/* PWA primary color */}
           {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
-          <meta name="author" content="FagusArt" />
+          <meta name="author" content="Fagus Art" />
 
-          <meta property="og:title" content="FagusArt" />
+          <meta property="og:title" content="Fagus Art" />
           <meta
             property="og:description"
-            content="FagusArt stolarija"
+            content="Fagus Art stolarija"
           />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://fagusart.vercel.app/" />
           <meta property="og:image" content="/meta-img.png" />
 
-          <meta name="dc.coverage" content="FagusArt" />
+          <meta name="dc.coverage" content="Fagus Art" />
           <meta
             name="dc:description"
-            content="FagusArt stolarija"
+            content="Fagus Art stolarija"
           />
-          <meta name="dc.publisher" content="FagusArt" />
-          <meta name="dc.title" content="FagusArt" />
+          <meta name="dc.publisher" content="Fagus Art" />
+          <meta name="dc.title" content="Fagus Art" />
           <meta name="dc.type" content="website" />
 
           <meta name="ROBOTS" content="INDEX, FOLLOW" />

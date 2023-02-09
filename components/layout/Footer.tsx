@@ -10,7 +10,7 @@ const Footer = () => {
       <Triangle position='top-ascending' />
       <div className='py-10 flex justify-center flex-col items-center font-normal'>
         <span className='w-fit'><Logo withLabel /></span>
-        <div>FagusArt © {year} | Sva prava zadržana</div>
+        <div>Fagus Art © {year} | Sva prava zadržana</div>
       </div>
     </footer>
   );
