@@ -35,7 +35,9 @@ module.exports = {
     scrollRestoration: true,
   },
   images: {
-    minimumCacheTTL: 60 * 60 * 24, // 1 day
+    minimumCacheTTL: 60 * 60 * 24, // 1 daydangerouslyAllowSVG: true,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   poweredByHeader: false,
 };

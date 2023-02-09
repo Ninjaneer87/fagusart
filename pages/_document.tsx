@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
           />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://fagusart.vercel.app/" />
-          {/* <meta property="og:image" content="/meta-img.png" /> */}
+          <meta property="og:image" content="/meta-img.png" />
 
           <meta name="dc.coverage" content="FagusArt" />
           <meta
