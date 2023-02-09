@@ -9,7 +9,16 @@ const IndexPage = () => {
   return (
     <>
       <Head>
-        <title>FagusArt</title>
+        <title>Fagus Art | Zaljubi se u svoj enterijer</title>
+        <meta 
+          name="description" 
+          content="Od modernih dizajnova do tradicionalnih stilova, mi smo tu da ispunimo sve vaše želje. Izrada nameštaja prema vašim željama i potrebama." 
+        />
+        <link
+          rel="canonical"
+          href="https://fagusart.vercel.app/"
+          key="canonical"
+        />
       </Head>
       <Hero />
       <About />

@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
             content="FagusArt stolarija"
           />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://fagusart.com/" />
+          <meta property="og:url" content="https://fagusart.vercel.app/" />
           {/* <meta property="og:image" content="/meta-img.png" /> */}
 
           <meta name="dc.coverage" content="FagusArt" />
