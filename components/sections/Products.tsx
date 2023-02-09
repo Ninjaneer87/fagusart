@@ -28,7 +28,7 @@ const Products = () => {
       <Container maxWidth={'xl'}>
         <ul className='grid grid-cols-[repeat(auto-fit,_minmax(280px,_380px))] justify-center gap-20 w-full mt-20'>
           {featuredProducts.map(({ id, img, label }) => (
-            <BlurIn delay={id * 40} className='flex gap-8 items-center' key={id}>
+            <BlurIn component='li' delay={id * 40} className='flex gap-8 items-center' key={id}>
               <img src={img} alt={label} width={60} height={60} />
               <h3 className='m-0 font-medium'>{label}</h3>
             </BlurIn>

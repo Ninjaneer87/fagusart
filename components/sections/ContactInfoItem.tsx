@@ -32,6 +32,7 @@ const ContactInfoItem = ({ icon, href, target, label, copyValue, message }: Prop
       <a className='text-primary' href={href} target={target}>{label}</a>
       <IconButton 
         size='small' 
+        aria-label="Copy value button"
         onClick={() => copyHandler(copyValue)}
         disabled={copied}
       >
