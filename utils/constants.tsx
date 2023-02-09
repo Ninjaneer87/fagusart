@@ -68,7 +68,7 @@ export const contactItems = [
     target: "_blank",
     label: "Preduzetnička 2b, Apatin ↗",
     copyValue: locationAddressUrl,
-    message: 'Adresa kopirana'
+    message: 'Lokacija kopirana'
   }
 ]
 
