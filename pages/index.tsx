@@ -41,7 +41,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      photos
+      photos: photos || []
     }
   }
 }

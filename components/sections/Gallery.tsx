@@ -11,7 +11,7 @@ import { Button } from "@mui/material";
 
 
 function Gallery({ photos }: GalleryProps) {
-  const { isScrolling, addSection, setInViewSection } = useSectionContext();
+  const { isScrolling, addSection, setInViewSection, scrollToSection } = useSectionContext();
   const { ref: scrollRef } = useInView({
     rootMargin: "-50%",
     onChange: (inView, entry) => {
@@ -20,7 +20,7 @@ function Gallery({ photos }: GalleryProps) {
     },
   });
   const [index, setIndex] = useState(-1);
-  const [visibleImagesLength, setVisibleImagesLength] = useState(70);
+  const [visibleImagesLength, setVisibleImagesLength] = useState(photos.length);
 
   const images = useMemo(() => photos.slice(0, visibleImagesLength), [photos, visibleImagesLength])
 
@@ -50,25 +50,40 @@ function Gallery({ photos }: GalleryProps) {
         targetRowHeight={150}
         onClick={({ index }) => setIndex(index)}
         spacing={4}
-      //   columns={(containerWidth) => {
-      //     if (containerWidth < 400) return 3;
-      //     if (containerWidth < 800) return 4;
-      //     if (containerWidth < 1200) return 7;
-      //     if (containerWidth < 1400) return 10;
-      //     return 15;
-      // }}
+        //   columns={(containerWidth) => {
+        //     if (containerWidth < 400) return 3;
+        //     if (containerWidth < 800) return 4;
+        //     if (containerWidth < 1200) return 7;
+        //     if (containerWidth < 1400) return 10;
+        //     return 15;
+        // }}
         rowConstraints={{ maxPhotos: 15 }}
-        
+
         componentsProps={() => ({
           imageProps: { loading: "eager" },
         })}
       />
 
-      {
-        photos.length > visibleImagesLength
-          ? <Button onClick={() => setVisibleImagesLength(prev => prev + 10)}>Učitaj jos slika...</Button>
-          : null
-      }
+      {/* <div className="mt-5 flex justify-center">
+        {
+          photos.length > visibleImagesLength
+            ? <Button
+              onClick={() => setVisibleImagesLength(photos.length)}
+            >
+              Više slika...
+            </Button>
+            : <Button
+              onClick={() => {
+                setVisibleImagesLength(20);
+                setTimeout(() => {
+                  scrollToSection('gallery');
+                }, 0);
+              }}
+            >
+              Manje slika...
+            </Button>
+        }
+      </div> */}
 
       <Lightbox
         slides={slides}

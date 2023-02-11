@@ -15,7 +15,7 @@ export type GalleryImage = {
 
 export const createGalleryPhotos = () => {
   const imageObjects = [...Array(70)].map((_n, i) => {
-    const src = `public/images/gallery/${i + 1}.webp`;
+    const src = `${process.env.NODE_ENV === 'development' ? 'public' : 'https://www.fagusart.com'}/images/gallery/${i + 1}.webp`;
     const { width, height } = sizeOf(src);
     return {
       src,
