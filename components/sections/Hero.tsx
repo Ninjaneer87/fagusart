@@ -27,29 +27,13 @@ const Hero = () => {
       "
       ref={scrollRef}
     >
-      {/* <BlurIn delay={500} className='flex flex-col items-center w-[500px] h-[500px] max-w-[95vw] max-h-[95vw] rounded-full relative'>
-        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bg rounded-full  w-[400px] h-[400px] max-w-[80vw] max-h-[80vw]  z-[-1]'></div>
-        <Typography component='h2' variant={isSmallScreen ? 'h5' : 'h4'} className="text-bg font-normal shrink-0 absolute top-[23%] left-1/2 -translate-x-1/2 z-[1] uppercase whitespace-nowrap">
-          Fagus Art
-        </Typography>
-        <img src="images/logo1.svg" alt="logo" width={500} height={500} className='max-w-[98vw] max-h-[98vw]' />
-        <Typography 
-          component='h1' 
-          variant={isSmallScreen ? 'h5' : 'h4'} 
-          className="text-bg text-center font-normal shrink-0 absolute bottom-[15%] left-1/2 -translate-x-1/2 z-[1] uppercase whitespace-nowrap"
-        >
-          Zaljubi se u <br /> svoj enterijer
-        </Typography>
-      </BlurIn> */}
-
-      {/* Outlined alternative */}
-
-      <BlurIn delay={500} className='flex flex-col items-center justify-center border-[2px] border-solid border-l-primary border-r-secondary border-t-0 border-b-0 rounded-full w-[400px] h-[400px] max-w-[95vw] max-h-[95vw]'>
+      <BlurIn delay={500} className='flex flex-col items-center justify-center border-[2px] border-solid border-l-primary border-r-secondary border-t-0 border-b-0 rounded-full w-[400px] h-[400px] max-w-[90vw] max-h-[90vw]'>
         <img src="images/logo.svg" alt="logo" width={150} height={150} className='max-w-[40vw] max-h-[40vw]' />
         <Typography component='h2' variant='h2' className="bg-clip-text text-transparent gradient font-normal sm:font-light shrink-0">
           Fagus Art
         </Typography>
       </BlurIn>
+
       <BlurIn delay={600}>
         <Typography
           component='h1'
@@ -61,7 +45,6 @@ const Hero = () => {
       </BlurIn>
 
       <div className="flex flex-wrap w-full max-w-[600px] mt-12 gap-6">
-
         <BlurIn delay={700} className='min-w-[230px] grow'>
           <Button
             fullWidth
