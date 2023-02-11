@@ -37,11 +37,17 @@ const IndexPage = ({ photos }: GalleryProps) => {
 export default IndexPage;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const photos = createGalleryPhotos();
-
-  return {
-    props: {
-      photos: photos || []
+  try {
+    const photos = createGalleryPhotos();
+    return {
+      props: {
+        photos: photos
+      }
+    }
+  } catch (error) {
+    return {
+      props: {}
     }
   }
+
 }
