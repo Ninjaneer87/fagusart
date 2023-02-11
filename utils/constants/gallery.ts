@@ -1,4 +1,5 @@
-import sizeOf from "image-size";
+// import sizeOf from "image-size";
+const sizeOf = require("image-size");
 
 const breakpoints = [3840, 2400, 1080, 640, 384, 256, 128, 96, 64, 48];
 
@@ -14,8 +15,8 @@ export type GalleryImage = {
 };
 
 export const createGalleryPhotos = () => {
-  const imageObjects = [...Array(70)].map((_n, i) => {
-    const src = `${process.env.NODE_ENV === 'development' ? 'public' : 'https://www.fagusart.com'}/images/gallery/${i + 1}.webp`;
+  const imageObjects = Array.from(Array(70)).map((_n, i) => {
+    const src = `${process.env.NODE_ENV === 'development' ? 'public/' : 'public/'}images/gallery/${i + 1}.webp`;
     const { width, height } = sizeOf(src);
     return {
       src,

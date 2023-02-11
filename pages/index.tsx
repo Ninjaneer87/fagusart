@@ -3,7 +3,7 @@ import Contact from "@/components/sections/Contact";
 import Gallery from "@/components/sections/Gallery";
 import Hero from "@/components/sections/Hero";
 import Products from "@/components/sections/Products";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import { createGalleryPhotos, GalleryImage } from "utils/constants/gallery";
 
@@ -36,7 +36,7 @@ const IndexPage = ({ photos }: GalleryProps) => {
 
 export default IndexPage;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
     const photos = createGalleryPhotos();
     return {
