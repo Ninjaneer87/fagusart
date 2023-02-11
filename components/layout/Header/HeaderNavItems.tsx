@@ -1,11 +1,11 @@
 import useBoxPosition from 'hooks/useBoxPosition';
 import React, { useRef } from 'react';
-import { navItems } from 'utils/constants';
 import { ListItemButton } from '@mui/material';
 import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
 import classes from './HeaderNavItems.module.scss';
 import { useSectionContext } from 'context/sectionContext';
+import { NAV_ITEMS } from 'utils/constants/navigation';
 
 
 const HeaderNavItems = () => {
@@ -20,7 +20,7 @@ const HeaderNavItems = () => {
         className={`${classes.navbarInner} transform-gpu`}
         style={boxPosition}
       >
-        {navItems.map(({ id, name, text, icon }) =>
+        {NAV_ITEMS.map(({ id, name, text, icon }) =>
           <ListItemButton
             key={id}
             {...(name === inViewSection && { ref: boxRef })}

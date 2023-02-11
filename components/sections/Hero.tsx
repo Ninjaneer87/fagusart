@@ -27,7 +27,7 @@ const Hero = () => {
       "
       ref={scrollRef}
     >
-      <BlurIn delay={500} className='flex flex-col items-center w-[500px] h-[500px] max-w-[95vw] max-h-[95vw] rounded-full relative'>
+      {/* <BlurIn delay={500} className='flex flex-col items-center w-[500px] h-[500px] max-w-[95vw] max-h-[95vw] rounded-full relative'>
         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-bg rounded-full  w-[400px] h-[400px] max-w-[80vw] max-h-[80vw]  z-[-1]'></div>
         <Typography component='h2' variant={isSmallScreen ? 'h5' : 'h4'} className="text-bg font-normal shrink-0 absolute top-[23%] left-1/2 -translate-x-1/2 z-[1] uppercase whitespace-nowrap">
           Fagus Art
@@ -40,23 +40,25 @@ const Hero = () => {
         >
           Zaljubi se u <br /> svoj enterijer
         </Typography>
-      </BlurIn>
+      </BlurIn> */}
 
       {/* Outlined alternative */}
 
-      {/* <BlurIn delay={500} className='flex flex-col items-center'>
+      <BlurIn delay={500} className='flex flex-col items-center justify-center border-[2px] border-solid border-l-primary border-r-secondary border-t-0 border-b-0 rounded-full w-[400px] h-[400px] max-w-[95vw] max-h-[95vw]'>
+        <img src="images/logo.svg" alt="logo" width={150} height={150} className='max-w-[40vw] max-h-[40vw]' />
         <Typography component='h2' variant='h2' className="bg-clip-text text-transparent gradient font-normal sm:font-light shrink-0">
           Fagus Art
         </Typography>
-        <img src="images/logo.svg" alt="logo" width={180} height={180} className='max-w-[40vw] max-h-[40vw]' />
-        <Typography 
-          component='h1' 
-          variant='h1' 
-          className='text-center max-w-[1000px]'
+      </BlurIn>
+      <BlurIn delay={600}>
+        <Typography
+          component='h1'
+          variant={isSmallScreen ? 'h2' : 'h1'}
+          className='text-center max-w-[1000px] font-light sm:font-thin mt-3'
         >
           Zaljubi se u svoj enterijer
         </Typography>
-      </BlurIn> */}
+      </BlurIn>
 
       <div className="flex flex-wrap w-full max-w-[600px] mt-12 gap-6">
 

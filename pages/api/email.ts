@@ -53,7 +53,7 @@ async function sendEmail(req: NextApiMailRequest, res: NextApiResponse) {
   )
     await transporter.sendMail({
       from: `Fagus Art | Kontakt forma <${req.body.email}>`, // sender address
-      to: "komodoutd@gmail.com", // list of receivers
+      to: emailUser, // list of receivers
       subject: "Nova poruka | Fagus Art", // Subject line
       text: "Nova poruka!", // plain text body
       html: output, // html body

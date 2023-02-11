@@ -2,8 +2,8 @@ import { Container } from '@mui/material';
 import { useSectionContext } from 'context/sectionContext';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { FEATURED_PRODUCTS } from 'utils/constants/products';
 import BlurIn from '../ui/BlurIn';
-import { featuredProducts, otherProducts } from 'utils/constants';
 
 const Products = () => {
   const { isScrolling, addSection, setInViewSection } = useSectionContext();
@@ -27,7 +27,7 @@ const Products = () => {
 
       <Container maxWidth={'xl'}>
         <ul className='grid grid-cols-[repeat(auto-fit,_minmax(280px,_380px))] justify-center gap-20 w-full mt-20'>
-          {featuredProducts.map(({ id, img, label }) => (
+          {FEATURED_PRODUCTS.map(({ id, img, label }) => (
             <BlurIn component='li' delay={id * 40} className='flex gap-8 items-center' key={id}>
               <img src={img} alt={label} width={60} height={60} />
               <h3 className='m-0 font-medium'>{label}</h3>

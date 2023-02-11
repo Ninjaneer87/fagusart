@@ -1,11 +1,11 @@
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
-import { socials } from 'utils/constants';
+import { SOCIAL_ITEMS } from 'utils/constants/contact';
 
 const HeaderSocials = () => {
   return (
     <ul className='flex items-center'>
-      {socials.map(({ icon, name, link }) => (
+      {SOCIAL_ITEMS.map(({ icon, name, link }) => (
         <li key={name}>
           <IconButton 
             aria-label={name} 

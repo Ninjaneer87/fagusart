@@ -8,14 +8,13 @@ import useForm from "hooks/useForm";
 import { createBody } from "utils/utility";
 import BlurIn from "@/components/ui/BlurIn";
 import MessageSuccess from "@/components/ui/MessageSuccess";
-import { contactFormInputs } from "utils/constants";
 import Button from "@mui/material/Button";
 import LoadingBar from "../ui/LoadingBar";
-import ClientOnlyPortal from "../portals/ClientOnlyPortal";
 import AlertSnack from "../ui/AlertSnack";
+import { CONTACT_FORM_INPUTS } from "utils/constants/contact";
 
 const ContactMessage = () => {
-  const { inputs, setInputs, formIsValid, resetForm } = useForm(contactFormInputs);
+  const { inputs, setInputs, formIsValid, resetForm } = useForm(CONTACT_FORM_INPUTS);
   const [loading, setLoading] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [snackOpen, setSnackOpen] = useState(false);
@@ -32,16 +31,16 @@ const ContactMessage = () => {
       const emailBody = createBody(inputs);
       setLoading(true);
       try {
-        // await axios.post("/api/email", emailBody);
-        // setLoading(false);
-        // setDialogOpen(true);
-        // resetForm();
-        console.log(emailBody)
-        setTimeout(() => {
-          setLoading(false);
-          setDialogOpen(true);
-          resetForm();
-        }, 1500);
+        await axios.post("/api/email", emailBody);
+        setLoading(false);
+        setDialogOpen(true);
+        resetForm();
+        // console.log(emailBody)
+        // setTimeout(() => {
+        //   setLoading(false);
+        //   setDialogOpen(true);
+        //   resetForm();
+        // }, 1500);
       } catch (error) {
         setLoading(false);
         setSnackOpen(true);

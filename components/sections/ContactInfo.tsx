@@ -1,8 +1,8 @@
 import { IconButton } from '@mui/material';
 import React from 'react';
-import { contactItems, socials } from 'utils/constants';
 import BlurIn from 'components/ui/BlurIn';
 import ContactInfoItem from './ContactInfoItem';
+import { CONTACT_ITEMS, SOCIAL_ITEMS } from 'utils/constants/contact';
 
 const ContactInfo = () => {
 
@@ -12,7 +12,7 @@ const ContactInfo = () => {
         Kontaktirajte nas danas i dobijte besplatnu procenu za vaš sledeći projekat nameštaja po meri
       </div>
       <div className='flex flex-col gap-3 text-lg font-light mt-10'>
-        {contactItems.map(item => (
+        {CONTACT_ITEMS.map(item => (
           <ContactInfoItem
             key={item.copyValue}
             icon={item.icon}
@@ -26,7 +26,7 @@ const ContactInfo = () => {
       </div>
       <hr className='w-full' />
       <ul className='flex gap-4 justify-start items-center'>
-        {socials.map(({ icon, name, link }) => (
+        {SOCIAL_ITEMS.map(({ icon, name, link }) => (
           <li key={name}>
             <IconButton
               aria-label={name}

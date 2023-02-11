@@ -18,7 +18,7 @@ function BlurIn<C extends ElementType>({ children, delay, className, ...props }:
   return (
     <Box
       ref={ref}
-      className={`${inViewClass} ${className || ""}`}
+      className={`transform-gpu ${inViewClass} ${className || ""}`}
       style={{ animationDelay: `${delay || 0}ms` }}
       {...props}
     >

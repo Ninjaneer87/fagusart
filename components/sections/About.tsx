@@ -2,9 +2,9 @@ import { Container } from '@mui/system';
 import { useSectionContext } from 'context/sectionContext';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { aboutItems } from 'utils/constants';
-import BlurIn from '../ui/BlurIn';
-import Triangle from '../ui/Triangle';
+import { ABOUT_ITEMS } from 'utils/constants/about';
+import BlurIn from 'components/ui/BlurIn';
+import Triangle from 'components/ui/Triangle';
 
 const About = () => {
   const { isScrolling, addSection, setInViewSection } = useSectionContext();
@@ -32,7 +32,7 @@ const About = () => {
         <BlurIn className='heading pt-10' component='h2'>Ko smo mi</BlurIn>
 
         <ul className='flex flex-wrap items-center justify-around gap-8 mt-20'>
-          {aboutItems.map(({ id, icon, desc }, i) => (
+          {ABOUT_ITEMS.map(({ id, icon, desc }, i) => (
             <BlurIn delay={(i + 1) * 200} component='li' key={id} className="gradient-wrapper w-full max-w-[430px]">
               <div className='bg-glass rounded-2xl p-4 sm:p-8 text-start'>
                 <div className="h-[150px] flex items-center justify-center">

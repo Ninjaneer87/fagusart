@@ -1,6 +1,6 @@
 import { FormControls } from "types/form-controls.type";
 import { InputValue } from "types/input-value.type";
-import { EMAIL_REGEX } from "./constants";
+import { EMAIL_REGEX } from "./constants/constants";
 
 
 export const Validators = {

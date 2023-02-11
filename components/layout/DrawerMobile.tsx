@@ -1,7 +1,7 @@
 import { ButtonBase } from "@mui/material";
 import { useSectionContext } from "context/sectionContext";
 import React, { useCallback, useEffect, useState } from "react";
-import { navItems } from "utils/constants";
+import { NAV_ITEMS } from "utils/constants/navigation";
 
 const DrawerMobile = () => {
   const { inViewSection, scrollToSection, setInViewSection} = useSectionContext();
@@ -28,7 +28,7 @@ const DrawerMobile = () => {
   return (
     <nav className={`fixed transform-gpu left-3 bottom-3 right-3 z-10 min-h-16 ${hide ? 'blur-out' : 'blur-in'} transition-transform overflow-hidden w-auto`}>
       <ul className="bg-black/40 backdrop-blur-lg flex gap-2 py-2 rounded-2xl justify-evenly">
-        {navItems.map(item => (
+        {NAV_ITEMS.map(item => (
           <li key={item.id} className='flex flex-col items-center'>
             <ButtonBase
               aria-label={item.name}
