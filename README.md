@@ -8,4 +8,4 @@ Technologies used:
 
 ## Hosting
 
-Fagus Art is hosted on [Vercel](https://vercel.com/), at [https://fagusart.vercel.app/](https://fagusart.vercel.app/)
+Fagus Art is hosted on [Vercel](https://vercel.com/), at [https://www.fagusart.com/](https://www.fagusart.com/)

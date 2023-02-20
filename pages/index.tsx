@@ -21,7 +21,7 @@ const IndexPage = ({ photos }: GalleryProps) => {
         />
         <link
           rel="canonical"
-          href="https://fagusart.vercel.app/"
+          href="https://www.fagusart.com/"
           key="canonical"
         />
       </Head>

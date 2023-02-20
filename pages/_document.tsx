@@ -12,22 +12,22 @@ export default class MyDocument extends Document {
           {/* <meta name="theme-color" content={theme.palette.primary.main} /> */}
           <meta name="author" content="Fagus Art" />
 
-          <meta property="og:title" content="Fagus Art" />
+          <meta property="og:title" content="Fagus Art stolarija | Zaljubi se u svoj enterijer" />
           <meta
             property="og:description"
-            content="Fagus Art stolarija"
+            content="Fagus Art stolarija | Kuhinje, Spavaće sobe, Kancelarijski nameštaj, Plakari, Sobna vrata, Dnevni boravak, Građevinska stolarija, Stepeništa, Predsoblja, Kupatila"
           />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://fagusart.vercel.app/" />
+          <meta property="og:url" content="https://www.fagusart.com/" />
           <meta property="og:image" content="/meta-img.png" />
 
           <meta name="dc.coverage" content="Fagus Art" />
           <meta
             name="dc:description"
-            content="Fagus Art stolarija"
+            content="Fagus Art stolarija | Kuhinje, Spavaće sobe, Kancelarijski nameštaj, Plakari, Sobna vrata, Dnevni boravak, Građevinska stolarija, Stepeništa, Predsoblja, Kupatila"
           />
           <meta name="dc.publisher" content="Fagus Art" />
-          <meta name="dc.title" content="Fagus Art" />
+          <meta name="dc.title" content="Fagus Art stolarija | Zaljubi se u svoj enterijer" />
           <meta name="dc.type" content="website" />
 
           <meta name="ROBOTS" content="INDEX, FOLLOW" />
